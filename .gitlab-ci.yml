@@ -1,0 +1,26 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq build-essential
+  script:
+    - echo "Compiling the code..."
+    - make -j4
+    - echo "Compile complete."
+  tags:
+    - linux
+    - docker
+
+test-job:
+  stage: test
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq build-essential
+  script:
+    - make test -j4
+    - ./testSuite
+  tags:
+    - linux
+    - docker
