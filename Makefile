@@ -4,6 +4,7 @@ STRIP       = strip
 CFLAGS  = -g -O3 -Wall -std=c++0x -pthread -I.
 LIBS    = -lpthread -lutil
 LDFLAGS = -g
+KMMFLAGS = -DMADEBYMAKEFILE
 
 GITFLAGS=
 GIT_VER =
@@ -19,9 +20,7 @@ KMM_OBJECTS = \
 		KMM/ListActiveKeys.o
 
 all: ckmm
-ckmm: $(HOST_OBJECTS) 
-		$(CXX) $(HOST_OBJECTS) $(CFLAGS) $(HSTFLAGS) $(GITFLAGS) $(LIBS) -o $(KMM_BIN)
+ckmm: $(KMM_OBJECTS) 
+		$(CXX) $(KMM_OBJECTS) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) $(LIBS) -o $(KMM_BIN)
 %.o: %.cpp
-		$(CXX) $(CFLAGS) $(HSTFLAGS) $(GITFLAGS) -c -o $@ $<
-clean:
-		$(RM) $(HOST_BIN) $(HOST_OBJECTS) $(CMD_BIN) $(CMD_OBJECTS) *.o *.d *.bak *~
+		$(CXX) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) -c -o $@ $<
