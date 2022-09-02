@@ -5,10 +5,11 @@
 #include "KMM/MessageID.h"
 #include "KMM/ResponseKind.h"
 #include "InventoryType.h"
+#include "KMM/KmmBody.h"
 
 namespace kmm
 {
-    class InventoryCommandListActiveKeysetIds {
+    class InventoryCommandListActiveKeysetIds : KmmBody {
     public:
         InventoryCommandListActiveKeysetIds();
         MessageID m_messageId;

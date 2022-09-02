@@ -12,16 +12,6 @@ build-amd64:
     - linux
     - docker
 
-build-arm-none:
-  stage: build
-  before_script:
-    - apt-get update -qq && apt-get install -y -qq build-essential git gcc-arm-none-eabi
-  script:
-    - make -f Makefile.ARM -j4
-  tags:
-    - linux
-    - docker
-
 test-arm64:
   stage: test
   before_script:

@@ -18,6 +18,7 @@ endif
 KMM_BIN = ckmm
 KMM_OBJECTS = \
 	KMM/main.o \
+	KMM/KmmBody.o \
 	$(wildcard KMM/InventoryCommand/*.cpp)
 
 all: ckmm
