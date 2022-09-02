@@ -18,10 +18,7 @@ endif
 KMM_BIN = ckmm
 KMM_OBJECTS = \
 	KMM/main.o \
-	KMM/InventoryCommand/ListActiveKeys.o \
-	KMM/InventoryCommand/ListActiveKeysetIds.o \
-	KMM/InventoryCommand/ListKeysetTaggingInfo.o \
-	KMM/InventoryCommand/ListKmfRsi.o
+	$(wildcard KMM/InventoryCommand/*.cpp)
 
 all: ckmm
 ckmm: $(KMM_OBJECTS) 
