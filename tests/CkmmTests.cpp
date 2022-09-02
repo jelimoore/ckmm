@@ -1,3 +1,4 @@
+#include "stdio.h"
 #include "munit/munit.h"
 #include "InventoryCommandTests.h"
 
@@ -7,5 +8,8 @@ static const MunitSuite CkmmTestSuite[] = {
 };
 
 int main(int argc, char* argv[MUNIT_ARRAY_PARAM(argc + 1)]) {
-  return munit_suite_main(CkmmTestSuite, (void*) "µnit", argc, argv);
+    printf("CKMM Test Suite\n");
+    printf("Built on %s at %s\n", __DATE__, __TIME__);
+    printf("Git version: %s (%s)", __GIT_VER__, __GIT_VER_HASH__);
+    return munit_suite_main(CkmmTestSuite, (void*) "µnit", argc, argv);
 }

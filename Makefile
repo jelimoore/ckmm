@@ -4,7 +4,7 @@ STRIP       = strip
 CFLAGS      = -g -O3 -Wall -std=c++0x -pthread -I.
 LIBS        = -lpthread -lutil
 LDFLAGS     = -g
-KMMFLAGS    = -DMADEBYMAKEFILE -DDATE="\"`date`\""
+KMMFLAGS    = -DMADEBYMAKEFILE
 
 GITFLAGS=
 GIT_VER =
@@ -23,7 +23,7 @@ KMM_OBJECTS = \
 
 KMM_TEST_BIN = ckmm_test
 KMM_TEST_OBJECTS = \
-    KMM_OBJECTS \
+    $(KMM_OBJECTS) \
     $(wildcard tests/*.cpp) \
 	tests/munit/munit.c
 
