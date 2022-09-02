@@ -25,7 +25,7 @@ KMM_TEST_BIN = ckmm_test
 KMM_TEST_OBJECTS = \
 	$(KMM_OBJECTS) \
 	$(wildcard tests/*.cpp) \
-	tests/munit/munit.o
+	tests/munit/munit.c
 
 all: ckmm
 test: ckmm-test
@@ -38,3 +38,7 @@ ckmm-test: $(KMM_TEST_OBJECTS)
 
 %.o: %.cpp
 		$(CXX) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) -c -o $@ $<
+
+%.o: %.c
+		$(CXX) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) -c -o $@ $<
+
