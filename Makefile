@@ -23,8 +23,8 @@ KMM_OBJECTS = \
 
 KMM_TEST_BIN = ckmm_test
 KMM_TEST_OBJECTS = \
-    $(KMM_OBJECTS) \
-    $(wildcard tests/*.cpp) \
+	$(KMM_OBJECTS) \
+	$(wildcard tests/*.cpp) \
 	tests/munit/munit.c
 
 all: ckmm
