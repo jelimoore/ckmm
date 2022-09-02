@@ -25,7 +25,7 @@ KMM_TEST_BIN = ckmm_test
 KMM_TEST_OBJECTS = \
 	$(KMM_OBJECTS) \
 	$(wildcard tests/*.cpp) \
-	tests/munit/munit.c
+	tests/munit/munit.cpp
 
 all: ckmm
 test: ckmm-test
