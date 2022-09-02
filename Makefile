@@ -17,7 +17,7 @@ endif
 
 KMM_BIN = ckmm
 KMM_OBJECTS = \
-		KMM/ListActiveKeys.o
+		KMM/InventoryCommand/ListActiveKeys.o
 
 all: ckmm
 ckmm: $(KMM_OBJECTS) 
