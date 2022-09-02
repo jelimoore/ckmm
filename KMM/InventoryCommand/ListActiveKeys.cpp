@@ -10,7 +10,7 @@ namespace kmm {
     {
     }
 
-    uint8_t* InventoryCommandListActiveKeys::toByes() {
+    uint8_t * InventoryCommandListActiveKeys::toByes() {
         uint8_t contents[6];
         contents[0] = m_inventoryType;
 

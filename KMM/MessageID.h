@@ -2,7 +2,7 @@
 #define __MessageID_H__
 
 enum MessageID {
-    Null = 0x00,
+    None = 0x00,
     CapabilitiesCommand = 0x01,
     CapabilitiesResponse = 0x02,
     ChangeRsiCommand = 0x03,
