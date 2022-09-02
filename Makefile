@@ -35,5 +35,5 @@ ckmm: $(KMM_OBJECTS)
 
 ckmm-test: $(KMM_TEST_OBJECTS) 
 		$(CXX) $(KMM_TEST_OBJECTS) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) $(LIBS) -o $(KMM_TEST_BIN)
-%.o: %.cpp
+%.o: %.cpp %.c
 		$(CXX) $(CFLAGS) $(KMMFLAGS) $(GITFLAGS) -c -o $@ $<
