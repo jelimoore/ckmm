@@ -16,7 +16,7 @@ namespace kmm
         ResponseKind m_responseKind;
         uint32_t m_inventoryMarker;
         uint16_t m_maxKeysRequested;
-        uint8_t* toByes();
+        uint8_t toBytes(uint8_t *contents);
     };
 }
 
