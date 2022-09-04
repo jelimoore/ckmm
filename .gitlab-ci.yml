@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-build-amd64:
+build-amd64-lin:
   stage: build
   before_script:
     - apt-get update -qq && apt-get install -y -qq build-essential git cmake
@@ -14,6 +14,17 @@ build-amd64:
   tags:
     - linux
     - docker
+
+build-amd64-win:
+  stage: build
+  script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make ckmm -j4
+  tags:
+    - windows
+    - shell
 
 test-amd64:
   stage: test
