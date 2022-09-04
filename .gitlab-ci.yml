@@ -7,7 +7,9 @@ build-amd64:
   before_script:
     - apt-get update -qq && apt-get install -y -qq build-essential git
   script:
-    - make -j4
+    - cd build
+    - cmake ..
+    - make ckmm -j4
   tags:
     - linux
     - docker

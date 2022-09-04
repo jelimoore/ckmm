@@ -1,4 +1,4 @@
-#include "ListKmfRsi.h"
+#include "InventoryCommand/ListKmfRsi.h"
 
 namespace kmm {
     InventoryCommandListKmfRsi::InventoryCommandListKmfRsi() :

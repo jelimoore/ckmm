@@ -2,10 +2,10 @@
 #define __ListKmfRsi_H__
 
 #include <stdint.h>
-#include "KMM/MessageID.h"
-#include "KMM/ResponseKind.h"
+#include "../MessageID.h"
+#include "../ResponseKind.h"
 #include "InventoryType.h"
-#include "KMM/KmmBody.h"
+#include "../KmmBody.h"
 
 namespace kmm
 {
