@@ -15,15 +15,15 @@ build-amd64-lin:
     - linux
     - docker
 
-build-amd64-win:
-  stage: build
-  script:
-    - mkdir build
-    - cd build
-    - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe .."
-  tags:
-    - windows
-    - shell
+#build-amd64-win:
+#  stage: build
+#  script:
+#    - mkdir build
+#    - cd build
+#    - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe .."
+#  tags:
+#    - windows
+#    - shell
 
 test-amd64:
   stage: test
