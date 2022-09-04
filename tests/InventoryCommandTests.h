@@ -6,5 +6,7 @@
 #include "../KMM/InventoryCommand/ListActiveKeysetIds.h"
 #include "../KMM/InventoryCommand/ListKeysetTaggingInfo.h"
 #include "../KMM/InventoryCommand/ListKmfRsi.h"
+#include "../KMM/InventoryCommand/ListMnp.h"
+#include "../KMM/InventoryCommand/ListRsiItems.h"
 
 #endif

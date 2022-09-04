@@ -2,10 +2,13 @@
 #include "../git.h"
 #include <cstdlib>
 #include <iostream>
+#include "InventoryCommandTests.h"
+#include <catch2/catch_test_macros.hpp>
 
-int main(void) {
+TEST_CASE( "CkmmTestInit", "[CkmmInit]" ) {
     printf("CKMM Test Suite\n");
     printf("Built on %s at %s\n", __DATE__, __TIME__);
+    REQUIRE(git::IsPopulated() == true);
     if(git::IsPopulated()) {
         if(git::AnyUncommittedChanges()) {
             std::cerr << "WARN: there were uncommitted changes at build-time." << std::endl;
@@ -15,10 +18,6 @@ int main(void) {
                   << "Author: " << git::AuthorName() << " <" << git::AuthorEmail() << ">\n"
                   << "Date: " << git::CommitDate() << "\n\n"
                   << git::CommitSubject() << "\n" << git::CommitBody() << std::endl;
-        return EXIT_SUCCESS;
     }
-    else {
-        std::cerr << "WARN: failed to get the current git state. Is this a git repo?" << std::endl;
-        return EXIT_FAILURE;
-    }
+    CHECK(git::AnyUncommittedChanges() == false);
 }

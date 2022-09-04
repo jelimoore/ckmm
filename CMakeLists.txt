@@ -30,10 +30,17 @@ list(APPEND ckmm_sources
   KMM/InventoryCommand/ListActiveKeysetIds.cpp
   KMM/InventoryCommand/ListKeysetTaggingInfo.cpp
   KMM/InventoryCommand/ListKmfRsi.cpp
+  KMM/InventoryCommand/ListMnp.cpp
+  KMM/InventoryCommand/ListRsiItems.cpp
+
+)
+
+list(APPEND ckmm_test_sources
+  tests/InventoryCommandTests.cpp
 )
 
 # add the executable
 add_executable(ckmm KMM/main.cpp ${ckmm_sources})
 
-add_executable(ckmm_tests tests/CkmmTests.cpp)
+add_executable(ckmm_tests tests/CkmmTests.cpp ${ckmm_test_sources} ${ckmm_sources})
 target_link_libraries(ckmm_tests PRIVATE cmake_git_version_tracking Catch2::Catch2WithMain)
