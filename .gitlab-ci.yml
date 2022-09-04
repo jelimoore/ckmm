@@ -25,7 +25,7 @@ build-amd64-lin:
 #    - windows
 #    - shell
 
-test-amd64:
+test-amd64-lin:
   stage: test
   before_script:
     - apt-get update -qq && apt-get install -y -qq build-essential git cmake
@@ -35,6 +35,12 @@ test-amd64:
     - cmake ..
     - make ckmm_tests -j4
     - ./ckmm_tests
+  artifacts:
+    name: tests-linux
+    public: false
+    expire_in: 1 week
+    paths:
+      - 'build/ckmm_tests'
   tags:
     - linux
     - docker
