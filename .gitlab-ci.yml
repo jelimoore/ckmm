@@ -7,6 +7,7 @@ build-amd64:
   before_script:
     - apt-get update -qq && apt-get install -y -qq build-essential git
   script:
+    - mkdir build
     - cd build
     - cmake ..
     - make ckmm -j4
@@ -19,8 +20,11 @@ test-amd64:
   before_script:
     - apt-get update -qq && apt-get install -y -qq build-essential git
   script:
-    - make test -j4
-    - ./ckmm-test
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make ckmm_tests -j4
+    - ./ckmm_tests
   tags:
     - linux
     - docker
