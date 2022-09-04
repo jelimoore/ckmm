@@ -2,7 +2,7 @@
 
 namespace kmm {
     InventoryCommandListKmfRsi::InventoryCommandListKmfRsi() :
-    m_messageId(InventoryCommand),
+    m_messageId(InventoryCommand_ID),
     m_inventoryType(ListKmfRsi),
     m_responseKind(Immediate)
     {

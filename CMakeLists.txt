@@ -26,6 +26,8 @@ list(APPEND ckmm_sources
   KMM/KeyInfo.cpp
   KMM/KmmBody.cpp
 #  KMM/KmmFrame.cpp
+  KMM/ZeroizeCommand.cpp
+  KMM/ZeroizeResponse.cpp
 
   KMM/InventoryCommand/ListActiveKeys.cpp
   KMM/InventoryCommand/ListActiveKeysetIds.cpp
@@ -37,6 +39,7 @@ list(APPEND ckmm_sources
 )
 
 list(APPEND ckmm_test_sources
+  tests/CommandTests.cpp
   tests/InventoryCommandTests.cpp
   tests/KeyInfoTests.cpp
 )

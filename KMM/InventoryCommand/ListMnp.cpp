@@ -2,7 +2,7 @@
 
 namespace kmm {
     InventoryCommandListMnp::InventoryCommandListMnp() :
-    m_messageId(InventoryCommand),
+    m_messageId(InventoryCommand_ID),
     m_inventoryType(ListMnp),
     m_responseKind(Immediate)
     {

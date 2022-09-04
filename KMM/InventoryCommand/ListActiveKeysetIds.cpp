@@ -2,7 +2,7 @@
 
 namespace kmm {
     InventoryCommandListActiveKeysetIds::InventoryCommandListActiveKeysetIds() :
-    m_messageId(InventoryCommand),
+    m_messageId(InventoryCommand_ID),
     m_inventoryType(ListActiveKsetIds),
     m_responseKind(Immediate)
     {

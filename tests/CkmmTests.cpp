@@ -11,11 +11,10 @@ TEST_CASE( "CkmmTestInit", "[CkmmInit]" ) {
         if(git::AnyUncommittedChanges()) {
             std::cerr << "WARN: there were uncommitted changes at build-time." << std::endl;
         }
-        std::cout << "commit " << git::CommitSHA1() << " (" << git::Branch() << ")\n"
-                  << "describe " << git::Describe() << "\n"
-                  << "Author: " << git::AuthorName() << " <" << git::AuthorEmail() << ">\n"
-                  << "Date: " << git::CommitDate() << "\n\n"
-                  << git::CommitSubject() << "\n" << git::CommitBody() << std::endl;
+        std::cout << "Commit " << git::CommitSHA1() << " (" << git::Branch() << ")\n"
+                  << " - Author: " << git::AuthorName() << " <" << git::AuthorEmail() << ">\n"
+                  << " - Date: " << git::CommitDate() << "\n"
+                  << " - Msg: " << git::CommitSubject() << std::endl;
     }
     CHECK(git::AnyUncommittedChanges() == false);
 }

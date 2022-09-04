@@ -12,10 +12,11 @@ namespace kmm
     class InventoryCommandListMnp : KmmBody {
     public:
         InventoryCommandListMnp();
+        uint8_t toBytes(uint8_t *contents);
+    private:
         MessageID m_messageId;
         InventoryType m_inventoryType;
         ResponseKind m_responseKind;
-        uint8_t toBytes(uint8_t *contents);
     };
 }
 

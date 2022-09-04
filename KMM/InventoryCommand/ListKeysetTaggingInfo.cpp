@@ -2,7 +2,7 @@
 
 namespace kmm {
     InventoryCommandListKeysetTaggingInfo::InventoryCommandListKeysetTaggingInfo() :
-    m_messageId(InventoryCommand),
+    m_messageId(InventoryCommand_ID),
     m_inventoryType(ListKeysetTaggingInfo),
     m_responseKind(Immediate)
     {
