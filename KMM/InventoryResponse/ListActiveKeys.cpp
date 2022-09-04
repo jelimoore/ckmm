@@ -2,11 +2,11 @@
 
 namespace kmm {
     InventoryCommandListActiveKeys::InventoryCommandListActiveKeys() :
-    m_messageId(InventoryCommand),
+    m_messageId(InventoryResponse),
     m_inventoryType(ListActiveKeys),
-    m_responseKind(Immediate),
-    m_inventoryMarker(0),
-    m_maxKeysRequested(0)
+    m_responseKind(None),
+    m_numKeys(0),
+//TODO: add key info list
     {
     }
 
@@ -20,6 +20,6 @@ namespace kmm {
         contents[4] = (m_maxKeysRequested >> 8) & 0xFF;
         contents[5] = (m_maxKeysRequested) & 0xFF;
 
-        return 6;
+        return 0;
     }
 }

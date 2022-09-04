@@ -1,8 +1,6 @@
-//#include "InventoryCommandTests.h"
 #include "../git.h"
 #include <cstdlib>
 #include <iostream>
-#include "InventoryCommandTests.h"
 #include <catch2/catch_test_macros.hpp>
 
 TEST_CASE( "CkmmTestInit", "[CkmmInit]" ) {

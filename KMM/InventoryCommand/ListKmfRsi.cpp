@@ -10,6 +10,6 @@ namespace kmm {
 
     uint8_t InventoryCommandListKmfRsi::toBytes(uint8_t *contents) {
         contents[0] = m_inventoryType;
-        return 0;
+        return 1;
     }
 }

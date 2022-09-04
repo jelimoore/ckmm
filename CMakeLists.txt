@@ -23,6 +23,7 @@ FetchContent_Declare(cmake_git_version_tracking
 FetchContent_MakeAvailable(cmake_git_version_tracking)
 
 list(APPEND ckmm_sources
+  KMM/KeyInfo.cpp
   KMM/KmmBody.cpp
 #  KMM/KmmFrame.cpp
 
@@ -37,6 +38,7 @@ list(APPEND ckmm_sources
 
 list(APPEND ckmm_test_sources
   tests/InventoryCommandTests.cpp
+  tests/KeyInfoTests.cpp
 )
 
 # add the executable
