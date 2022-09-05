@@ -2,10 +2,10 @@
 
 namespace kmm {
     InventoryCommandListMnp::InventoryCommandListMnp() :
-    m_messageId(InventoryCommand_ID),
-    m_inventoryType(ListMnp),
-    m_responseKind(Immediate)
+    m_inventoryType(ListMnp)
     {
+        m_messageId = InventoryCommand_ID;
+        m_responseKind = Immediate;
     }
 
     uint8_t InventoryCommandListMnp::toBytes(uint8_t *contents) {

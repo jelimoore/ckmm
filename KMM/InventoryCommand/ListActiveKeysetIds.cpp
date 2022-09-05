@@ -2,10 +2,10 @@
 
 namespace kmm {
     InventoryCommandListActiveKeysetIds::InventoryCommandListActiveKeysetIds() :
-    m_messageId(InventoryCommand_ID),
-    m_inventoryType(ListActiveKsetIds),
-    m_responseKind(Immediate)
+    m_inventoryType(ListActiveKsetIds)
     {
+        m_messageId = InventoryCommand_ID;
+        m_responseKind = Immediate;
     }
 
     uint8_t InventoryCommandListActiveKeysetIds::toBytes(uint8_t *contents) {

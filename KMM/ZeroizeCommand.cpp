@@ -2,15 +2,15 @@
 
 namespace kmm {
     ZeroizeCommand::ZeroizeCommand() :
-    KmmBody(),
-    m_messageId(ZeroizeCommand_ID),
-    m_responseKind(Immediate)
+    KmmBody()
     {
+        m_messageId = ZeroizeCommand_ID;
+        m_responseKind = Immediate;
     }
 
     uint8_t ZeroizeCommand::toBytes(uint8_t *contents) {
-        contents[0] = m_messageId;
-        return 1;
+        //contents[0] = 0;
+        return 0;
     }
 
 }

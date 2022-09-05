@@ -8,13 +8,10 @@
 
 namespace kmm
 {
-    class ZeroizeResponse : KmmBody {
+    class ZeroizeResponse : public KmmBody {
     public:
         ZeroizeResponse();
         uint8_t toBytes(uint8_t *contents);
-    private:
-        MessageID m_messageId;
-        ResponseKind m_responseKind;
     };
 }
 

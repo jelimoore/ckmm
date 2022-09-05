@@ -2,10 +2,10 @@
 
 namespace kmm {
     InventoryCommandListKmfRsi::InventoryCommandListKmfRsi() :
-    m_messageId(InventoryCommand_ID),
-    m_inventoryType(ListKmfRsi),
-    m_responseKind(Immediate)
+    m_inventoryType(ListKmfRsi)
     {
+        m_messageId = InventoryCommand_ID;
+        m_responseKind = Immediate;
     }
 
     uint8_t InventoryCommandListKmfRsi::toBytes(uint8_t *contents) {

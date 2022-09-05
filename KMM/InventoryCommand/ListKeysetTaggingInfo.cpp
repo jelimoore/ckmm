@@ -2,10 +2,11 @@
 
 namespace kmm {
     InventoryCommandListKeysetTaggingInfo::InventoryCommandListKeysetTaggingInfo() :
-    m_messageId(InventoryCommand_ID),
-    m_inventoryType(ListKeysetTaggingInfo),
-    m_responseKind(Immediate)
+    m_inventoryType(ListKeysetTaggingInfo)
+
     {
+        m_messageId = InventoryCommand_ID;
+        m_responseKind = Immediate;
     }
 
     uint8_t InventoryCommandListKeysetTaggingInfo::toBytes(uint8_t *contents) {

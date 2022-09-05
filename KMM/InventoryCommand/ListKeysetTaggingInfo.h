@@ -9,14 +9,12 @@
 
 namespace kmm
 {
-    class InventoryCommandListKeysetTaggingInfo : KmmBody {
+    class InventoryCommandListKeysetTaggingInfo : public KmmBody {
     public:
         InventoryCommandListKeysetTaggingInfo();
         uint8_t toBytes(uint8_t *contents);
     private:
-        MessageID m_messageId;
         InventoryType m_inventoryType;
-        ResponseKind m_responseKind;
     };
 }
 

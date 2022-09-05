@@ -12,8 +12,6 @@ namespace kmm
     public:
         ZeroizeCommand();
         uint8_t toBytes(uint8_t *contents);
-        MessageID m_messageId;
-        ResponseKind m_responseKind;
     private:
     };
 }

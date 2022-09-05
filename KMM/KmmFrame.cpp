@@ -1,27 +1,28 @@
 #include "KmmFrame.h"
 
 namespace kmm {
-    KmmFrame::KmmFrame(kmm::KmmBody body) :
+    KmmFrame::KmmFrame(kmm::KmmBody* body) :
     m_body(body)
     {
     }
 
     uint16_t KmmFrame::toBytes(uint8_t *contents) {
         uint8_t temp[256];
-        uint8_t bodyLen = m_body.toBytes(temp);
+        uint8_t bodyLen = m_body->toBytes(temp);
+        uint8_t messageLen = 7 + bodyLen;
 
-        contents[0] = m_body.m_messageId;
+        contents[0] = m_body->m_messageId;
 
-        contents[1] = (bodyLen >> 8) & 0xFF; // len hi
-        contents[2] = bodyLen & 0xFF; // len lo
+        contents[1] = (messageLen >> 8) & 0xFF; // len hi
+        contents[2] = messageLen & 0xFF; // len lo
         
         contents[3] = 0x00; // responseKind
         //TODO: clean this section up
-        if ((m_body.m_responseKind & 0x02) >> 1) {
+        if ((m_body->m_responseKind & 0x02) >> 1) {
             contents[3] |= 0b10000000;
         }
 
-        if (m_body.m_responseKind & 0x01) {
+        if (m_body->m_responseKind & 0x01) {
             contents[3] |= 0b01000000;
         }
 
@@ -34,7 +35,12 @@ namespace kmm {
         contents[7] = 0xFF;
         contents[8] = 0xFF;
         contents[9] = 0xFF;
-        return 10;
+
+        for (int i=0; i<bodyLen; i++) {
+            contents[10+i] = temp[i];
+        }
+
+        return 10 + bodyLen;
     }
 
     uint16_t KmmFrame::toBytesWithPreamble(uint8_t *contents, uint8_t mfid) {

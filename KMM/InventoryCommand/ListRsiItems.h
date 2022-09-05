@@ -9,14 +9,12 @@
 
 namespace kmm
 {
-    class InventoryCommandListRsiItems : KmmBody {
+    class InventoryCommandListRsiItems : public KmmBody {
     public:
         InventoryCommandListRsiItems();
         uint8_t toBytes(uint8_t *contents);
     private:
-        MessageID m_messageId;
         InventoryType m_inventoryType;
-        ResponseKind m_responseKind;
     };
 }
 
