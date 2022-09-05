@@ -2,6 +2,7 @@
 
 namespace kmm {
     ZeroizeCommand::ZeroizeCommand() :
+    KmmBody(),
     m_messageId(ZeroizeCommand_ID),
     m_responseKind(Immediate)
     {

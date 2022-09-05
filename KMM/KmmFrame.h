@@ -1,21 +1,20 @@
-#if !defined(__ListKmfRsi_H__)
-#define __ListKmfRsi_H__
+#if !defined(__KmmFrame_H__)
+#define __KmmFrame_H__
 
 #include <stdint.h>
-#include "KMM/MessageID.h"
-#include "KMM/ResponseKind.h"
-#include "InventoryType.h"
+#include "MessageID.h"
+#include "AlgorithmID.h"
+#include "KmmBody.h"
 
 namespace kmm
 {
-    class InventoryCommandListKmfRsi {
+    class KmmFrame {
     public:
-        InventoryCommandListKmfRsi();
-        MessageID m_messageId;
-        InventoryType m_inventoryType;
-        ResponseKind m_responseKind;
-        uint8_t toBytes(uint8_t *contents);
+        KmmFrame(kmm::KmmBody body);
+        uint16_t toBytes(uint8_t *contents);
+        uint16_t toBytesWithPreamble(uint8_t *contents, uint8_t mfid);
     private:
+        kmm::KmmBody m_body;
         uint16_t m_frameLen;
     };
 }

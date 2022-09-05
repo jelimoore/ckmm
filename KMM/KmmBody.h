@@ -14,7 +14,7 @@ namespace kmm
         MessageID m_messageId;
         InventoryType m_inventoryType;
         ResponseKind m_responseKind;
-        uint8_t toBytes(uint8_t *contents);
+        virtual uint8_t toBytes(uint8_t *contents);
     };
 }
 
