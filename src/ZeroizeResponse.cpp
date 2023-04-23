@@ -11,4 +11,8 @@ namespace kmm {
         return 0;
     }
 
+    uint8_t ZeroizeResponse::parse(uint8_t *contents) {
+        return 0;
+    }
+
 }

@@ -13,6 +13,7 @@ namespace kmm
         kmmMessageID m_messageId;
         kmmResponseKind m_responseKind;
         virtual uint8_t toBytes(uint8_t *contents) = 0;
+        virtual uint8_t parse(uint8_t *contents) = 0;
     };
 }
 

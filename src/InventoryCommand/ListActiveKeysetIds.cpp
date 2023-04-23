@@ -12,4 +12,8 @@ namespace kmm {
         contents[0] = m_inventoryType;
         return 1;
     }
+
+    uint8_t InventoryCommandListActiveKeysetIds::parse(uint8_t *contents) {
+        return 0;
+    }
 }

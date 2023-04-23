@@ -40,4 +40,25 @@ namespace kmm {
         return frameLen;
     }
 
+    KmmBody* parse(uint8_t *contents) {
+        KmmBody* body;
+        uint8_t messageId = contents[0];
+        uint16_t bodyLen = 0;
+        bodyLen |= (contents[1] << 8);
+        bodyLen |= contents[2];
+        uint8_t messageBody[bodyLen];
+
+        if (messageId == InventoryCommand_ID) {
+            return 0;
+        } else if (messageId == InventoryResponse_ID) {
+            return 0;
+        } else if (messageId == ZeroizeCommand_ID) {
+            body = new ZeroizeResponse();
+            body->parse(messageBody);
+        } else {
+            return 0;
+        }
+        return body;
+    }
+
 }

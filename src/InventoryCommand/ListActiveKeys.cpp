@@ -22,4 +22,8 @@ namespace kmm {
 
         return 6;
     }
+
+    uint8_t InventoryCommandListActiveKeys::parse(uint8_t *contents) {
+        return 0;
+    }
 }

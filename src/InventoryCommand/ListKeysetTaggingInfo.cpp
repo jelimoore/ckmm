@@ -13,4 +13,8 @@ namespace kmm {
         contents[0] = m_inventoryType;
         return 1;
     }
+
+    uint8_t InventoryCommandListKeysetTaggingInfo::parse(uint8_t *contents) {
+        return 0;
+    }
 }

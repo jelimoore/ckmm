@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 #include "KmmBody.h"
+#include "MessageID.h"
+#include "ZeroizeCommand.h"
+#include "ZeroizeResponse.h"
 
 namespace kmm
 {
@@ -10,6 +13,7 @@ namespace kmm
     public:
         KmmFrame(KmmBody* kmmBody);
         uint16_t toBytes(uint8_t *contents);
+        KmmBody* parse(uint8_t *contents);
     private:
         KmmBody* m_kmmBody;
     };

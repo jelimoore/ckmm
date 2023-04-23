@@ -12,6 +12,7 @@ namespace kmm
     public:
         ZeroizeResponse();
         uint8_t toBytes(uint8_t *contents);
+        uint8_t parse(uint8_t *contents);
     };
 }
 

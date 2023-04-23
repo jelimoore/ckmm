@@ -13,6 +13,7 @@ namespace kmm
     public:
         InventoryCommandListActiveKeysetIds();
         uint8_t toBytes(uint8_t *contents);
+        uint8_t parse(uint8_t *contents);
     private:
         InventoryType m_inventoryType;
     };
