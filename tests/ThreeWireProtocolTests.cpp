@@ -23,13 +23,13 @@ TEST_CASE("ThreeWireProtocol", "[TWP]") {
     }
 
     SECTION("Generation - With Body") {
-        kmm::ZeroizeCommand* command = new kmm::ZeroizeCommand();
+        kmm::InventoryCommandListActiveKeys* command = new kmm::InventoryCommandListActiveKeys();
+        command->m_inventoryMarker = 0x00;
+        command->m_maxKeysRequested = 0x4E;
         kmm::KmmFrame frame(command);
-        
-        
 
-        uint8_t referenceBytes[] = {0xC2U, 0x00U, 0x10U, 0x00U, 0xFFU, 0xFFU, 0xFFU, 0x21U, 0x00U, 0x07U, 0x80U, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0x74U, 0xD7U};
-        uint16_t length = 19;
+        uint8_t referenceBytes[] = {0xC2U, 0x00U, 0x16U, 0x00U, 0xFFU, 0xFFU, 0xFFU, 0x0DU, 0x00U, 0x0DU, 0x80U, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFFU, 0xFDU, 0x00U, 0x00U, 0x00U, 0x00U, 0x4EU, 0x50U, 0x65U};
+        uint16_t length = 25;
         uint8_t testBytes[length];
 
         uint16_t receivedLen = kmmCreateKmmFrame(&frame, testBytes);
