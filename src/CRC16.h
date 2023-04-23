@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-uint16_t calculateFrameCrc16(uint8_t *val, uint8_t inLen);
+uint16_t kmmCalculateFrameCrc16(uint8_t *val, uint8_t inLen);
 
 #endif

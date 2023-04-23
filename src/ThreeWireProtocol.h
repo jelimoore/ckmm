@@ -12,4 +12,6 @@
 #define OPCODE_DISCONNECT_ACK 0x90
 #define OPCODE_DISCONNECT 0x92
 
+uint16_t kmmCreateKmmFrame(kmm::KmmFrame *inFrame, uint8_t *outFrame);
+
 #endif

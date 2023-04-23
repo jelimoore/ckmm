@@ -47,7 +47,7 @@ const uint16_t crcTable[] =
             0x3DE3, 0x2C6A, 0x1EF1, 0x0F78
         };
 
-uint16_t calculateFrameCrc16(uint8_t *val, uint8_t inLen) {
+uint16_t kmmCalculateFrameCrc16(uint8_t *val, uint8_t inLen) {
     uint16_t crc = 65535;
     for (uint8_t i = 0; i < inLen; i++)
     {

@@ -42,9 +42,11 @@ list(APPEND ckmm_sources
 
 list(APPEND ckmm_test_sources
   tests/CommandTests.cpp
+  tests/CrcTests.cpp
   tests/InventoryCommandTests.cpp
   tests/KeyInfoTests.cpp
   tests/KmmFrameTests.cpp
+  tests/ThreeWireProtocolTests.cpp
 )
 
 # add the executable

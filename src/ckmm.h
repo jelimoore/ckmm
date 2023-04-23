@@ -10,7 +10,7 @@
 #include "ResponseKind.h"
 
 // ckmm core
-#include "keyInfo.h"
+#include "KeyInfo.h"
 #include "KmmBody.h"
 #include "KmmFrame.h"
 #include "ThreeWireProtocol.h"
