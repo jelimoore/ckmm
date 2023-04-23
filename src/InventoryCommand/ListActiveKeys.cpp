@@ -18,6 +18,6 @@ namespace kmm {
         contents[3] = (m_maxKeysRequested >> 8) & 0xFF;
         contents[4] = (m_maxKeysRequested) & 0xFF;
 
-        return 6;
+        return 5;
     }
 }
