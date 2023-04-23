@@ -30,7 +30,7 @@ namespace kmm {
         m_sln |= contents[1] << 8;
         m_sln |= contents[2];
 
-        m_algid = (AlgorithmID) contents[3];
+        m_algid = (kmmAlgorithmID) contents[3];
 
         m_kid |= contents[4] << 8;
         m_kid |= contents[5];

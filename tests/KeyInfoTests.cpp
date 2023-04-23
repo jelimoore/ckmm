@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../KMM/KeyInfo.h"
-#include "../KMM/AlgorithmID.h"
+#include "../src/KeyInfo.h"
+#include "../src/AlgorithmID.h"
 
 TEST_CASE("KeyInfo", "[KeyInfo]") {
     SECTION("Generation") {

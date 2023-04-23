@@ -1,7 +1,7 @@
 #if !defined(__AlgorithmID_H__)
 #define __AlgorithmID_H__
 
-enum AlgorithmID {
+enum kmmAlgorithmID {
     ACCORDION = 0x00,
     BATON_ODD = 0x01,
     FIREFLY = 0x02,

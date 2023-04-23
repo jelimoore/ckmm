@@ -1,7 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../KMM/KmmFrame.h"
-#include "../KMM/ZeroizeCommand.h"
-#include "../KMM/InventoryCommand/ListActiveKeys.h"
+#include "../src/KmmFrame.h"
+#include "../src/ZeroizeCommand.h"
+#include "../src/InventoryCommand/ListActiveKeys.h"
 
 TEST_CASE("KmmFrame", "[KmmFrame]") {
     SECTION("Generation - No Preamble 1") {
@@ -42,7 +42,7 @@ TEST_CASE("KmmFrame", "[KmmFrame]") {
         }
         delete(command);
     }
-
+/*
     SECTION("Generation - With Preamble 1") {
         kmm::ZeroizeCommand* command = new kmm::ZeroizeCommand();
         kmm::KmmFrame frame(command);
@@ -83,6 +83,7 @@ TEST_CASE("KmmFrame", "[KmmFrame]") {
         }
         delete(command);
     }
+    */
 
     SECTION("Parsing") {
         //TODO

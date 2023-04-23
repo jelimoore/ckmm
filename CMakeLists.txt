@@ -23,18 +23,20 @@ FetchContent_Declare(cmake_git_version_tracking
 FetchContent_MakeAvailable(cmake_git_version_tracking)
 
 list(APPEND ckmm_sources
-  KMM/KeyInfo.cpp
-  KMM/KmmBody.cpp
-  KMM/KmmFrame.cpp
-  KMM/ZeroizeCommand.cpp
-  KMM/ZeroizeResponse.cpp
+  src/CRC16.cpp
+  src/KeyInfo.cpp
+  src/KmmBody.cpp
+  src/KmmFrame.cpp
+  src/ThreeWireProtocol.cpp
+  src/ZeroizeCommand.cpp
+  src/ZeroizeResponse.cpp
 
-  KMM/InventoryCommand/ListActiveKeys.cpp
-  KMM/InventoryCommand/ListActiveKeysetIds.cpp
-  KMM/InventoryCommand/ListKeysetTaggingInfo.cpp
-  KMM/InventoryCommand/ListKmfRsi.cpp
-  KMM/InventoryCommand/ListMnp.cpp
-  KMM/InventoryCommand/ListRsiItems.cpp
+  src/InventoryCommand/ListActiveKeys.cpp
+  src/InventoryCommand/ListActiveKeysetIds.cpp
+  src/InventoryCommand/ListKeysetTaggingInfo.cpp
+  src/InventoryCommand/ListKmfRsi.cpp
+  src/InventoryCommand/ListMnp.cpp
+  src/InventoryCommand/ListRsiItems.cpp
 
 )
 
@@ -46,7 +48,7 @@ list(APPEND ckmm_test_sources
 )
 
 # add the executable
-add_executable(ckmm KMM/main.cpp ${ckmm_sources})
+#add_executable(ckmm KMM/main.cpp ${ckmm_sources})
 
 add_executable(ckmm_tests tests/CkmmTests.cpp ${ckmm_test_sources} ${ckmm_sources})
 target_link_libraries(ckmm_tests PRIVATE cmake_git_version_tracking Catch2::Catch2WithMain)

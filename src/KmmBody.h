@@ -10,8 +10,8 @@ namespace kmm
     class KmmBody {
     public:
         KmmBody();
-        MessageID m_messageId;
-        ResponseKind m_responseKind;
+        kmmMessageID m_messageId;
+        kmmResponseKind m_responseKind;
         virtual uint8_t toBytes(uint8_t *contents) = 0;
     };
 }

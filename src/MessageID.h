@@ -1,7 +1,7 @@
 #if !defined(__MessageID_H__)
 #define __MessageID_H__
 
-enum MessageID {
+enum kmmMessageID {
     CapabilitiesCommand_ID = 0x01,
     CapabilitiesResponse_ID = 0x02,
     ChangeRsiCommand_ID = 0x03,

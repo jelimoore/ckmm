@@ -13,7 +13,7 @@ namespace kmm
         uint8_t m_keysetId;
         uint16_t m_sln;
         uint16_t m_kid;
-        AlgorithmID m_algid;
+        kmmAlgorithmID m_algid;
         uint8_t toBytes(uint8_t *contents);
         uint8_t parse(uint8_t *contents);
     };

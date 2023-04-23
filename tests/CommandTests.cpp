@@ -1,5 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../KMM/ZeroizeCommand.h"
+#include "../src/ZeroizeCommand.h"
 
 TEST_CASE("ZeroizeCommand", "[Command]") {
     SECTION("Generation") {

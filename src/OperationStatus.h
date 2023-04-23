@@ -1,7 +1,7 @@
 #if !defined(__OpserationStatus_H__)
 #define __OperationStatus_H__
 
-enum AlgorithmID {
+enum kmmOperationStatus {
     CommandWasPerformed = 0x00,
     CommandWasNotPerformed = 0x01,
     ItemDoesNotExist = 0x02,

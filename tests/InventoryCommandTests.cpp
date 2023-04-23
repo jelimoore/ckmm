@@ -1,11 +1,11 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../KMM/InventoryCommand/InventoryType.h"
-#include "../KMM/InventoryCommand/ListActiveKeys.h"
-#include "../KMM/InventoryCommand/ListActiveKeysetIds.h"
-#include "../KMM/InventoryCommand/ListKeysetTaggingInfo.h"
-#include "../KMM/InventoryCommand/ListKmfRsi.h"
-#include "../KMM/InventoryCommand/ListMnp.h"
-#include "../KMM/InventoryCommand/ListRsiItems.h"
+#include "../src/InventoryCommand/InventoryType.h"
+#include "../src/InventoryCommand/ListActiveKeys.h"
+#include "../src/InventoryCommand/ListActiveKeysetIds.h"
+#include "../src/InventoryCommand/ListKeysetTaggingInfo.h"
+#include "../src/InventoryCommand/ListKmfRsi.h"
+#include "../src/InventoryCommand/ListMnp.h"
+#include "../src/InventoryCommand/ListRsiItems.h"
 
 TEST_CASE("ListActiveKeys", "[InventoryCommand]") {
     SECTION("Generation") {
