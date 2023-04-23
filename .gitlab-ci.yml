@@ -10,7 +10,7 @@ build-amd64-lin:
     - mkdir build
     - cd build
     - cmake ..
-    - make ckmm -j4
+    - make -j4
   tags:
     - linux
     - docker
