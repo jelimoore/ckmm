@@ -36,7 +36,7 @@ TEST_CASE("ThreeWireProtocol", "[TWP]") {
         REQUIRE(length == receivedLen);
 
         for (int i=0; i<length; i++) {
-            printf("Index %d: ref %d test %d\n", i, referenceBytes[i], testBytes[i]);
+            //printf("Index %d: ref %d test %d\n", i, referenceBytes[i], testBytes[i]);
             REQUIRE(referenceBytes[i] == testBytes[i]);
         }
         delete(command);

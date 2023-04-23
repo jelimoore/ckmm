@@ -10,6 +10,7 @@ namespace kmm {
     }
 
     uint8_t InventoryCommandListKeysetTaggingInfo::toBytes(uint8_t *contents) {
-        return 0;
+        contents[0] = m_inventoryType;
+        return 1;
     }
 }
