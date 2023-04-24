@@ -2,6 +2,7 @@
 #include "../src/KmmFrame.h"
 #include "../src/ZeroizeCommand.h"
 #include "../src/InventoryCommand/ListActiveKeys.h"
+#include "../src/MessageID.h"
 
 TEST_CASE("KmmFrame", "[KmmFrame]") {
     SECTION("Generation - No Preamble 1") {
@@ -85,8 +86,21 @@ TEST_CASE("KmmFrame", "[KmmFrame]") {
     }
     */
 
-    SECTION("Parsing") {
-        //TODO
-        REQUIRE(1 == 1);
+    SECTION("Parsing - 1") {
+        uint8_t inBytes[] = {0x22, 0x00, 0x07, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+        kmm::KmmFrame* frame = new kmm::KmmFrame(false, inBytes);
+        printf("Getting body\n");
+        kmm::KmmBody* body = frame->kmmBody;
+        printf("Getting message ID\n");
+        printf("%d", body->m_responseKind);
+        printf("Got message ID\n");
+        REQUIRE(body->m_messageId == ZeroizeResponse_ID);
+        delete(frame);
+    }
+
+    SECTION("Parsing - 2") {
+        uint8_t inBytes[] = {0x0D, 0x00, 0x0D, 0x80, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFD, 0x00, 0x00, 0x00, 0x00, 0x4E};
+        kmm::KmmFrame* frame = new kmm::KmmFrame(false, inBytes);
+        delete(frame);
     }
 }
