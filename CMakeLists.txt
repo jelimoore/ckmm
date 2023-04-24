@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_BUILD_TYPE Debug)
+add_compile_options(-Wall -Wextra -pedantic)
+
 Include(FetchContent)
 
 # set the project name

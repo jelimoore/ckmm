@@ -4,7 +4,7 @@ namespace kmm {
     ZeroizeResponse::ZeroizeResponse()
     {
         m_messageId = ZeroizeResponse_ID;
-        m_responseKind = Immediate;
+        m_responseKind = None;
     }
 
     uint8_t ZeroizeResponse::toBytes(uint8_t *contents) {

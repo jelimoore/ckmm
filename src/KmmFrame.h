@@ -11,11 +11,12 @@ namespace kmm
 {
     class KmmFrame {
     public:
-        KmmFrame(KmmBody* kmmBody);
+        KmmFrame(KmmBody* bodyIn);
+        KmmFrame(bool preamble, uint8_t *contents);
         uint16_t toBytes(uint8_t *contents);
         KmmBody* parse(uint8_t *contents);
+        KmmBody* kmmBody;
     private:
-        KmmBody* m_kmmBody;
     };
 }
 

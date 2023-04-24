@@ -1,19 +1,28 @@
 #include "KmmFrame.h"
+#include <catch2/catch_test_macros.hpp>
 
 namespace kmm {
-    KmmFrame::KmmFrame(KmmBody* kmmBody)
+    KmmFrame::KmmFrame(KmmBody* bodyIn)
     {
-        m_kmmBody = kmmBody;
+        kmmBody = bodyIn;
+    }
+
+    KmmFrame::KmmFrame(bool preamble, uint8_t *contents) {
+        if (preamble) {
+            //
+        } else {
+            kmmBody = parse(contents);
+        }
     }
 
     uint16_t KmmFrame::toBytes(uint8_t *contents) {
         uint8_t bodyBytes[512];
-        uint8_t bodyLen = m_kmmBody->toBytes(bodyBytes);
+        uint8_t bodyLen = kmmBody->toBytes(bodyBytes);
         uint8_t frameLen = 10 + bodyLen;
         uint8_t messageLen = 7 + bodyLen;
 
         /* message ID */
-        contents[0] = m_kmmBody->m_messageId;
+        contents[0] = kmmBody->m_messageId;
 
         /* message length */
         contents[1] = (messageLen >> 8) & 0xFF;
@@ -21,7 +30,7 @@ namespace kmm {
 
         /* message format */
         contents[3] = 0x00;
-        contents[3] |= (m_kmmBody->m_responseKind & 0x02) << 6;
+        contents[3] |= (kmmBody->m_responseKind & 0x02) << 6;
 
         /* destination rsi */
         contents[4] = 0xFF;
@@ -40,19 +49,19 @@ namespace kmm {
         return frameLen;
     }
 
-    KmmBody* parse(uint8_t *contents) {
+    KmmBody* KmmFrame::parse(uint8_t *contents) {
         KmmBody* body;
         uint8_t messageId = contents[0];
         uint16_t bodyLen = 0;
         bodyLen |= (contents[1] << 8);
         bodyLen |= contents[2];
-        uint8_t messageBody[bodyLen];
+        uint8_t messageBody[bodyLen - 7];
 
         if (messageId == InventoryCommand_ID) {
             return 0;
         } else if (messageId == InventoryResponse_ID) {
             return 0;
-        } else if (messageId == ZeroizeCommand_ID) {
+        } else if (messageId == ZeroizeResponse_ID) {
             body = new ZeroizeResponse();
             body->parse(messageBody);
         } else {
