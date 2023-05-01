@@ -1,6 +1,5 @@
 #include "ListActiveKeys.h"
 
-
 namespace kmm {
     InventoryResponseListActiveKeys::InventoryResponseListActiveKeys() :
     m_inventoryType(ListActiveKeys),
@@ -35,14 +34,15 @@ namespace kmm {
             for (int i=0; i<m_numItems; i++) {
                 uint8_t temp[6];
 
-                for (int j=0; i<6; j++) {
-                    temp[j] = contents[6 + (i * 6)];
+                for (int j=0; j<6; j++) {
+                    temp[j] = contents[6 + (i * 6) + j];
                 }
 
                 KeyInfo* info = new KeyInfo();
                 info->parse(temp);
                 m_keys[i] = info;
             }
+            return m_numItems;
         } else {
             return 0;
         }

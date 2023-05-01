@@ -12,7 +12,7 @@ TEST_CASE("ThreeWireProtocol", "[TWP]") {
         uint16_t length = 19;
         uint8_t testBytes[length];
 
-        uint16_t receivedLen = kmmCreateKmmFrame(&frame, testBytes);
+        uint16_t receivedLen = kmmCreateTwiFrame(&frame, testBytes);
         REQUIRE(length == receivedLen);
 
         for (int i=0; i<length; i++) {
@@ -32,7 +32,7 @@ TEST_CASE("ThreeWireProtocol", "[TWP]") {
         uint16_t length = 25;
         uint8_t testBytes[length];
 
-        uint16_t receivedLen = kmmCreateKmmFrame(&frame, testBytes);
+        uint16_t receivedLen = kmmCreateTwiFrame(&frame, testBytes);
         REQUIRE(length == receivedLen);
 
         for (int i=0; i<length; i++) {

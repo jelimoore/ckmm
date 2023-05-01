@@ -48,6 +48,7 @@ list(APPEND ckmm_sources
 list(APPEND ckmm_test_sources
   tests/CommandTests.cpp
   tests/InventoryCommandTests.cpp
+  tests/InventoryResponseTests.cpp
   tests/KeyInfoTests.cpp
   tests/KmmFrameTests.cpp
   tests/ThreeWireProtocolTests.cpp

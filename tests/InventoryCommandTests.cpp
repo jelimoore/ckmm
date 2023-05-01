@@ -1,5 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../src/InventoryCommand/InventoryType.h"
+#include "../src/InventoryType.h"
 #include "../src/InventoryCommand/ListActiveKeys.h"
 #include "../src/InventoryCommand/ListActiveKeysetIds.h"
 #include "../src/InventoryCommand/ListKeysetTaggingInfo.h"

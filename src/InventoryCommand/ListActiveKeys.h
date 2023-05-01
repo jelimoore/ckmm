@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "../MessageID.h"
 #include "../ResponseKind.h"
-#include "InventoryType.h"
+#include "../InventoryType.h"
 #include "../KmmBody.h"
 
 namespace kmm
@@ -14,7 +14,7 @@ namespace kmm
         InventoryCommandListActiveKeys();
         uint32_t m_inventoryMarker;
         uint32_t m_numItems;
-        uint32_t m_maxKeysRequested
+        uint32_t m_maxKeysRequested;
         uint8_t toBytes(uint8_t *contents);
         uint8_t parse(uint8_t *contents);
     private:

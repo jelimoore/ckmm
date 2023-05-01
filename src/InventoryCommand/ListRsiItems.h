@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "../MessageID.h"
 #include "../ResponseKind.h"
-#include "InventoryType.h"
+#include "../InventoryType.h"
 #include "../KmmBody.h"
 
 namespace kmm
