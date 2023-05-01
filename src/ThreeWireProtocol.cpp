@@ -1,7 +1,6 @@
 #include "ThreeWireProtocol.h"
-#include <catch2/catch_test_macros.hpp>
 
-uint16_t kmmCreateKmmFrame(kmm::KmmFrame *inFrame, uint8_t *outFrame) {
+uint16_t kmmCreateTwiFrame(kmm::KmmFrame *inFrame, uint8_t *outFrame) {
     uint8_t inBytes[512];
     uint16_t inLen = inFrame->toBytes(inBytes);
     uint16_t bodyLength = inLen + 6;
