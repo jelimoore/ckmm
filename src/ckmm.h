@@ -8,6 +8,8 @@
 #include "MessageID.h"
 #include "OperationStatus.h"
 #include "ResponseKind.h"
+#include "InventoryType.h"
+#include "KeyInfo.h"
 
 // ckmm core
 #include "KeyInfo.h"
@@ -30,7 +32,7 @@
 #include "ZeroizeResponse.h"
 
 // inventory responses
-
+#include "InventoryResponse/ListActiveKeys.h"
 
 
 #endif
