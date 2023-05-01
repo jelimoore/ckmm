@@ -4,8 +4,11 @@
 #include <stdint.h>
 #include "KmmBody.h"
 #include "MessageID.h"
-#include "ZeroizeCommand.h"
 #include "ZeroizeResponse.h"
+#include "InventoryType.h"
+
+#include "ZeroizeCommand.h"
+#include "InventoryResponse/ListActiveKeys.h"
 
 namespace kmm
 {

@@ -6,7 +6,7 @@ namespace kmm {
     m_inventoryMarker(0),
     m_numItems(0)
     {
-        m_messageId = InventoryCommand_ID;
+        m_messageId = InventoryResponse_ID;
         m_responseKind = Immediate;
     }
 
