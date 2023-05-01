@@ -41,6 +41,8 @@ list(APPEND ckmm_sources
   src/InventoryCommand/ListMnp.cpp
   src/InventoryCommand/ListRsiItems.cpp
 
+  src/InventoryResponse/ListActiveKeys.cpp
+
 )
 
 list(APPEND ckmm_test_sources
