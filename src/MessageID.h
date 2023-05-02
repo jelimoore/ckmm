@@ -30,7 +30,7 @@ enum kmmMessageID {
     Reserved1A_ID = 0x1A,
     Reserved1B_ID = 0x1B,
     Reserved1C_ID = 0x1C,
-    RekeyAcknowledgment_ID = 0x1D,
+    RekeyAcknowledgement_ID = 0x1D,
     RekeyCommand_ID = 0x1E,
     SetDateTime_ID = 0x1F,
     WarmStartCommand_ID = 0x20,

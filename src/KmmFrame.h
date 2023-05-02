@@ -7,6 +7,7 @@
 #include "ZeroizeResponse.h"
 #include "InventoryType.h"
 
+#include "RekeyAcknowledgement.h"
 #include "ZeroizeCommand.h"
 #include "InventoryResponse/ListActiveKeys.h"
 

@@ -29,9 +29,11 @@ list(APPEND ckmm_sources
   src/CRC16.cpp
   src/KeyInfo.cpp
   src/KeyItem.cpp
+  src/KeyStatus.cpp
   src/KmmBody.cpp
   src/KmmFrame.cpp
   src/ModifyKeyCommand.cpp
+  src/RekeyAcknowledgement.cpp
   src/ThreeWireProtocol.cpp
   src/ZeroizeCommand.cpp
   src/ZeroizeResponse.cpp
@@ -55,6 +57,7 @@ list(APPEND ckmm_test_sources
   tests/KeyItemTests.cpp
   tests/KmmFrameTests.cpp
   tests/ModifyKeyCommandTests.cpp
+  tests/RekeyAcknowledgementTests.cpp
   tests/ThreeWireProtocolTests.cpp
 )
 

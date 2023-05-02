@@ -32,6 +32,7 @@
 
 // responses
 #include "ZeroizeResponse.h"
+#include "RekeyAcknowledgement.h"
 
 // inventory responses
 #include "InventoryResponse/ListActiveKeys.h"

@@ -72,6 +72,9 @@ namespace kmm {
             } else {
                 return 0;
             }
+        } else if (messageId == RekeyAcknowledgement_ID) {
+            body = new RekeyAcknowledgement();
+            body->parse(messageBody, messageBodyLen);
         } else if (messageId == ZeroizeResponse_ID) {
             body = new ZeroizeResponse();
             body->parse(messageBody, messageBodyLen);
