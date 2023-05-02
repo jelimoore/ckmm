@@ -10,6 +10,7 @@
 #include "ResponseKind.h"
 #include "InventoryType.h"
 #include "KeyInfo.h"
+#include "KeyItem.h"
 
 // ckmm core
 #include "KeyInfo.h"
@@ -19,6 +20,7 @@
 
 // commands
 #include "ZeroizeCommand.h"
+#include "ModifyKeyCommand.h"
 
 // inventory commands
 #include "InventoryCommand/ListActiveKeys.h"
