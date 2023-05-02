@@ -106,6 +106,12 @@ TEST_CASE("KmmFrame", "[KmmFrame]") {
         kmm::KmmFrame* frame = new kmm::KmmFrame(false, inBytes);
         kmm::KmmBody* body = frame->kmmBody;
         REQUIRE(body->m_messageId == InventoryResponse_ID);
+        
+        kmm::InventoryResponseListActiveKeys* keysResp = static_cast<kmm::InventoryResponseListActiveKeys*>(body);
+        REQUIRE(keysResp->m_keys[0]->m_algid == 0x84);
+        REQUIRE(keysResp->m_keys[0]->m_keysetId == 0x01);
+        REQUIRE(keysResp->m_keys[0]->m_sln == 0x01);
+        REQUIRE(keysResp->m_keys[0]->m_kid == 0x01);
         delete(frame);
         delete(body);
     }

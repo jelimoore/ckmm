@@ -1,5 +1,4 @@
 #include "ListActiveKeys.h"
-#include <Arduino.h>
 
 namespace kmm {
     InventoryResponseListActiveKeys::InventoryResponseListActiveKeys() :
