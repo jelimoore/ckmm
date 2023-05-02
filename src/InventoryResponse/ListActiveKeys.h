@@ -18,7 +18,7 @@ namespace kmm
         uint16_t m_numItems;
         KeyInfo* m_keys[256];
         uint8_t toBytes(uint8_t *contents);
-        uint8_t parse(uint8_t *contents);
+        uint8_t parse(uint8_t *contents, uint16_t length);
     private:
         InventoryType m_inventoryType;
     };

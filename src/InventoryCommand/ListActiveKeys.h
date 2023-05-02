@@ -16,7 +16,7 @@ namespace kmm
         uint32_t m_numItems;
         uint32_t m_maxKeysRequested;
         uint8_t toBytes(uint8_t *contents);
-        uint8_t parse(uint8_t *contents);
+        uint8_t parse(uint8_t *contents, uint16_t length);
     private:
         InventoryType m_inventoryType;
     };

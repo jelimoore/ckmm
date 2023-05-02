@@ -54,9 +54,10 @@ namespace kmm {
         uint16_t bodyLen = 0;
         bodyLen |= (contents[1] << 8);
         bodyLen |= contents[2];
-        uint8_t messageBody[bodyLen - 7];
+        uint16_t messageBodyLen = bodyLen - 7;
+        uint8_t messageBody[messageBodyLen];
 
-        for (int i=0; i<bodyLen - 7; i++) {
+        for (int i=0; i<messageBodyLen; i++) {
             messageBody[i] = contents[i+10];
         }
 
@@ -67,13 +68,13 @@ namespace kmm {
             
             if (inventoryType == ListActiveKeys) {
                 body = new InventoryResponseListActiveKeys();
-                body->parse(messageBody);
+                body->parse(messageBody, messageBodyLen);
             } else {
                 return 0;
             }
         } else if (messageId == ZeroizeResponse_ID) {
             body = new ZeroizeResponse();
-            body->parse(messageBody);
+            body->parse(messageBody, messageBodyLen);
         } else {
             return 0;
         }

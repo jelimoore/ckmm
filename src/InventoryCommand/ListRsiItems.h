@@ -13,7 +13,7 @@ namespace kmm
     public:
         InventoryCommandListRsiItems();
         uint8_t toBytes(uint8_t *contents);
-        uint8_t parse(uint8_t *contents);
+        uint8_t parse(uint8_t *contents, uint16_t length);
     private:
         InventoryType m_inventoryType;
     };

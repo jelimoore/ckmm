@@ -1,4 +1,5 @@
 #include "ListActiveKeys.h"
+#include <Arduino.h>
 
 namespace kmm {
     InventoryResponseListActiveKeys::InventoryResponseListActiveKeys() :
@@ -16,7 +17,7 @@ namespace kmm {
         return 0;
     }
 
-    uint8_t InventoryResponseListActiveKeys::parse(uint8_t *contents) {
+    uint8_t InventoryResponseListActiveKeys::parse(uint8_t *contents, uint16_t length) {
         if (contents[0] != m_inventoryType) {
             return 0;
         }
@@ -30,7 +31,7 @@ namespace kmm {
 
         if (m_numItems == 0) {
             return 0;
-        } else if (((m_numItems * 6) % (sizeof(contents) - 6)) == 0) {
+        } else if (((m_numItems * 6) % (length - 6)) == 0) {
             for (int i=0; i<m_numItems; i++) {
                 uint8_t temp[6];
 

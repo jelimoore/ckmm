@@ -13,7 +13,7 @@ namespace kmm {
         return 1;
     }
 
-    uint8_t InventoryCommandListActiveKeysetIds::parse(uint8_t *contents) {
+    uint8_t InventoryCommandListActiveKeysetIds::parse(uint8_t *contents, uint16_t length) {
         return 0;
     }
 }
