@@ -28,8 +28,10 @@ FetchContent_MakeAvailable(cmake_git_version_tracking)
 list(APPEND ckmm_sources
   src/CRC16.cpp
   src/KeyInfo.cpp
+  src/KeyItem.cpp
   src/KmmBody.cpp
   src/KmmFrame.cpp
+  src/ModifyKeyCommand.cpp
   src/ThreeWireProtocol.cpp
   src/ZeroizeCommand.cpp
   src/ZeroizeResponse.cpp
@@ -50,7 +52,9 @@ list(APPEND ckmm_test_sources
   tests/InventoryCommandTests.cpp
   tests/InventoryResponseTests.cpp
   tests/KeyInfoTests.cpp
+  tests/KeyItemTests.cpp
   tests/KmmFrameTests.cpp
+  tests/ModifyKeyCommandTests.cpp
   tests/ThreeWireProtocolTests.cpp
 )
 

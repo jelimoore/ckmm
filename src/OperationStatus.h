@@ -1,4 +1,4 @@
-#if !defined(__OpserationStatus_H__)
+#if !defined(__OperationStatus_H__)
 #define __OperationStatus_H__
 
 enum kmmOperationStatus {
